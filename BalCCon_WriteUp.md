@@ -3,7 +3,8 @@
 Taylor Bart<br>
 Ryan Dunn<br>
 Matt Evans<br>
-John Tiffany<br>
+John Tiffany<br><br>
+[Write Up Link](https://github.com/tbart27/BalCCon_CTF/blob/master/BalCCon_WriteUp.md)
 
 ## crypto/Twice Cooler
 Description: We are given a message "which resembles some very familiar encoding...".<br>
@@ -25,11 +26,14 @@ It seems that crawlers were disabled from entering server-status and what made t
 
 ## crypto/Xoared
 Description: The hint for the challenge was "the message was "xoared" or something like that".<br>
-Method: The hint definitely refers to XOR encryption as a component but simple XOR decoders online produced nothing of value. After the finish of the CTF, I read this [write up](https://ctftime.org/writeup/23823). xortool looks super useful and I wish I had used that software instead for this challenge. Hopefully, future challeneges will try an XOR encryption.<br>
+Method: The hint definitely refers to XOR encryption as a component but simple XOR decoders online produced nothing of value and I was having trouble figuring out the key. After the finish of the CTF, I read this [write up](https://ctftime.org/writeup/23823). xortool looks super useful and I wish I had used that software instead for this challenge. Hopefully, future challenges will try an XOR encryption.<br>
 
 ## web/Let Me See
-Description<br>
-Methods<br>
-Methods<br>
-Link<br>
-Picture<br>
+Description: The bulk of my time for this CTF was spent on Twice Cooler and Let Me See. This challenge provided a page where you could read the source code of a website.<br>
+Immediately, this looked like a textbook SSRF vulnerability.  Simply entering http://localhost yielded:<br><br>
+![](https://github.com/tbart27/BalCCon_CTF/blob/master/web3.png)<br><br>
+This confirms that we are able to send commands to the server and we are given where the flag is located! Immediately I tried http://localhost/flag.txt but this obviously was too easy since I was greeted with:<br><br>
+![](https://github.com/tbart27/BalCCon_CTF/blob/master/web4.png)<br><br>
+A quick audit of the site with https://pentest-tools.com/website-vulnerability-scanning/website-scanner# gave me some more useful information that the server was using nginx 1.19.2 and was missing some HTTP security headers.<br><br>
+![](https://github.com/tbart27/BalCCon_CTF/blob/master/web5.PNG)<br><br>
+This helped to identify what type of injections and file paths to use in my attacks.
