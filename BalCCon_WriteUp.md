@@ -19,8 +19,9 @@ Unfortunately, we couldn't get distributions on two letter combinations. Another
 ## web/Navajo
 Description: We are given a link to https://navajo.pwn.institute/ where we are greeted with the following page:<br><br>
 ![](https://github.com/tbart27/BalCCon_CTF/blob/master/web1.png)<br><br>
-
-Method:<br>
+Methods: First I checked the html for any clues/vulnerabilities but the html contained nothing useful. So now I tried seeing if I could access an server files from the browser. From the common server files I tested, I was able to get non-404 on robot.txt.<br><br>
+![](https://github.com/tbart27/BalCCon_CTF/blob/master/web2.png)<br><br>
+It seems that crawlers were disabled from entering server-status and what made this more intriguing was that the challenge hint said "What is the status of Navajo tribes nowadays?". After some research, I still couldn't figure out a valid attack on the server-status file so I proceeded to look over other challenges.
 
 ## crypto/Xoared
 Description<br>
