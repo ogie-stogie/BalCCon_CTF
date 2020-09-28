@@ -24,8 +24,8 @@ Methods: First I checked the html for any clues/vulnerabilities but the html con
 It seems that crawlers were disabled from entering server-status and what made this more intriguing was that the challenge hint said "What is the status of Navajo tribes nowadays?". After some research, I still couldn't figure out a valid attack on the server-status file so I proceeded to look over other challenges.
 
 ## crypto/Xoared
-Description<br>
-Method<br>
+Description: The hint for the challenge was "the message was "xoared" or something like that".<br>
+Method: The hint definitely refers to XOR encryption as a component but simple XOR decoders online produced nothing of value. After the finish of the CTF, I read this [write up](https://ctftime.org/writeup/23823). xortool looks super useful and I wish I had used that software instead for this challenge. Hopefully, future challeneges will try an XOR encryption.<br>
 
 ## web/Let Me See
 Description<br>
