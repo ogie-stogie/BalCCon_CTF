@@ -36,4 +36,7 @@ This confirms that we are able to send commands to the server and we are given w
 ![](https://github.com/tbart27/BalCCon_CTF/blob/master/web4.png)<br><br>
 A quick audit of the site with https://pentest-tools.com/website-vulnerability-scanning/website-scanner# gave me some more useful information that the server was using nginx 1.19.2 and was missing some HTTP security headers.<br><br>
 ![](https://github.com/tbart27/BalCCon_CTF/blob/master/web5.PNG)<br><br>
-This helped to identify what type of injections and file paths to use in my attacks.
+This helped to identify what type of injections and file paths to use in my attacks. I tried various methods to terminate the url and have the commands executed afterwards, and I also tried to see if I had access to any other files on the server. This is where I hit a roadblock and found no new leads. If I was to continue with this challenge. I believe I would continue these injection atttacks via SSRF and then secondly, I would look up ways to scan for vulnerable ports on the server.<br><br>
+
+## Conclusion
+Overall, this was as challenging as RatCTF but a level up from DUCTF. I believe as a team we could've solved some if we had a week to spend on it. Consquently, when we found write-ups for this CTF, we have tried to follow their methods a lot closer. Some vulnerabilities I had never seen before, and bing introduced to software like xortool is going to be helpful for future challenges.
